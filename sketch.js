@@ -15,8 +15,11 @@ let smoke
 let smokeX = -200
 let smoke2X = -900
 
+function windowResized(){
+  resizeCanvas(windowWidth,windowHeight);
+}
 function setup() {
-  createCanvas(600, 400);  
+  createCanvas(windowWidth,windowHeight); 
    
    h1 = createElement('h1', 'VULKAN');
   h1.style('color', 'rgb(143,1,1)');

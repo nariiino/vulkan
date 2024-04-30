@@ -27,8 +27,12 @@ let one = { //Green Circle
   
   
   
+
+  function windowResized(){
+    resizeCanvas(windowWidth,windowHeight);
+  }
   function setup() {
-    createCanvas(700, 700);
+    createCanvas(windowWidth,windowHeight);
     noStroke();
     one.x = random(0, 500);
     one.y = random(0, 500);
