@@ -87,6 +87,7 @@ let one = { //Green Circle
     
     if (mouseIsPressed) {
       click();
+      r2.position(three.x, three.y);
     } 
   
   }
