@@ -18,6 +18,12 @@ let one = { //Green Circle
     y: 0,
     d: 30
   };
+
+  let four = { //Orange Circle
+    x: 0,
+    y: 0,
+    d: 30
+  };
   
   
   
@@ -25,6 +31,7 @@ let one = { //Green Circle
     interactable = loadImage('r4.gif');
     interactable2 = loadImage('r4.gif');
     interactable1 = loadImage('r4.gif');
+    interactable4 = loadImage('r4.gif');
     bg = loadImage('bg.gif')
   }
   
@@ -50,6 +57,7 @@ let one = { //Green Circle
    image(interactable, three.x, three.y,);
    image(interactable2, two.x, two.y);
    image(interactable1, one.x, one.y);
+   image(interactable4, four.x, four.y);
 
   
     fill('rgb(220,247,220)');
@@ -60,6 +68,9 @@ let one = { //Green Circle
   
     fill( 'orange');
     ellipse(three.x, three.y, three.d, three.d);
+
+    fill( 'orange');
+    ellipse(four.x, four.y, four.d, four.d);
     
    
     if (one.x > width + 100) {
@@ -80,6 +91,14 @@ let one = { //Green Circle
        
   
     }
+
+    if (four.x > width + 100) {
+        four.x = random(0, 500); 
+        four.y = 0; 
+         
+    
+      }
+      
     
     
     one.x += 1; 
@@ -90,6 +109,9 @@ let one = { //Green Circle
     
     three.x += 1; 
     three.y += 1; 
+
+    four.x += 1; 
+    four.y += 1; 
     
     
     if (mouseIsPressed) {
@@ -98,6 +120,10 @@ let one = { //Green Circle
       press();
       
       hit();
+
+      smash();
+
+
     } 
   
   }
@@ -145,5 +171,14 @@ let one = { //Green Circle
             }
 }
 
+function smash() {
+    let button = dist(mouseX, mouseY, four.x, four.y);
+    if (button <= 50) {
+      one.d = 0 
+      interactable4.setFrame(0);
+      interactable4.play();
+      console.log("smash!");
+    }
+}
     
   
