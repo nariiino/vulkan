@@ -4,13 +4,13 @@
 let one = { //Green Circle
     x: 0,
     y: 0,
-    d: 30
+    d: 40
   };
   
   let two = { //Magenta Circle
     x: 0,
     y: 0,
-    d: 30
+    d: 20
   };
   
   let three = { //Orange Circle
