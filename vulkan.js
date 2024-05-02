@@ -15,7 +15,7 @@ function windowResized(){
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
-    h1 = createElement('h1', 'VALKAN');
+    h1 = createElement('h1', 'VULKAN');
   h1.style('color', 'rgb(143,1,1)');
  
 
