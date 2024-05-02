@@ -15,7 +15,7 @@ function windowResized(){
 
 function setup() {
   createCanvas(windowWidth,windowHeight);
-    h1 = createElement('h1', 'TANTZ');
+    h1 = createElement('h1', 'VALKAN');
   h1.style('color', 'rgb(143,1,1)');
  
 
@@ -57,7 +57,7 @@ function draw() {
 }
 
 function redirect(){
-  window.location.href = "aufdem.html";
+  window.location.href = "end.html";
 }
 
 // A simple Particle class
