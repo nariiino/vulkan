@@ -57,7 +57,7 @@ function draw() {
 }
 
 function redirect(){
-  window.location.href = "valkan.html";
+  window.location.href = "vulkan.html";
 }
 
 // A simple Particle class
