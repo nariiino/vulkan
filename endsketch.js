@@ -24,6 +24,10 @@ let one = { //Green Circle
     y: 0,
     d: 30
   };
+
+  let fillcolor = '(rgb(170,243,193))';
+
+  
   
   
   
@@ -62,8 +66,10 @@ let one = { //Green Circle
    image(interactable4, four.x, four.y);
 
   
-    fill('rgb(220,247,220)');
+   fill(fillcolor);
     ellipse(one.x, one.y, one.d, one.d);
+    fill(fillcolor);
+    triangle(one.x -100 , one.y -100, one.x , one.y - 10 , one.x, one.y + 10);
   
     fill('rgb(213,132,213)');
     ellipse(two.x, two.y, two.d, two.d);
@@ -163,13 +169,13 @@ let one = { //Green Circle
         }
     }
 
-        function hit() {
-            let button = dist(mouseX, mouseY, one.x, one.y);
-            if (button <= 50) {
-              one.d = 0 
-              interactable1.setFrame(0);
-              interactable1.play();
-              console.log("hit!");
+    function hit() {
+        let button = dist(mouseX, mouseY, one.x , one.y);
+        if (button <= 50) {
+           one.d = 0;
+          interactable1.setFrame(0);
+          interactable1.play();
+          console.log("hit!");
             }
 }
 
