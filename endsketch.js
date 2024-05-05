@@ -26,6 +26,7 @@ let one = { //Green Circle
   };
 
   let fillcolor = '(rgb(170,243,193))';
+  let fill2 = ('rgb(105,105,105)')
 
   
   
@@ -173,6 +174,7 @@ let one = { //Green Circle
         let button = dist(mouseX, mouseY, one.x , one.y);
         if (button <= 50) {
            one.d = 0;
+           fillcolor = ('rgb(105,105,105)');
           interactable1.setFrame(0);
           interactable1.play();
           console.log("hit!");
