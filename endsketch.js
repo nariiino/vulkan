@@ -2,31 +2,51 @@
 
 
 let one = { //Green Circle
-    x: -500,
+    x: -900,
     y: 0,
-    d: 40
+    d: 20
   };
-  
-  let two = { //Magenta Circle
-    x: -6500,
+
+  let onee = { //Green Circle
+    x: -900,
+    y: 0,
+    d: 20
+  };
+
+
+  let onea = { //Green Circle
+    x: 100,
+    y: 0,
+    d: 20
+  };
+
+  let oneb = { //Green Circle
+    x: 100,
+    y: 0,
+    d: 20
+  };
+
+  let onec = { //Green Circle
+    x: 100,
     y: 0,
     d: 20
   };
   
-  let three = { //Orange Circle
-    x: -4000,
-    y: 0,
-    d: 30
-  };
 
-  let four = { //blue Circle
-    x: -300,
-    y: 0,
-    d: 30
-  };
 
-  let fillcolor = '(rgb(170,243,193))';
-  let fill2 = ('rgb(105,105,105)')
+  let fillcolor = ('red');
+
+  let system;
+  
+
+
+let smoke
+
+let smokeX = -200
+let smoke2X = -900
+
+  
+  
 
   
   
@@ -37,7 +57,11 @@ let one = { //Green Circle
     interactable2 = loadImage('r4.gif');
     interactable1 = loadImage('r4.gif');
     interactable4 = loadImage('r4.gif');
-    bg = loadImage('bg.gif')
+    interactable3 = loadImage('r4.gif');
+    interactable5 = loadImage('r4.gif');
+    bg = loadImage('back3.gif')
+    smoke2 = loadImage ('smoke.png');
+    smoke = loadImage ('smoke.png');
   }
   
   
@@ -47,90 +71,132 @@ let one = { //Green Circle
     function setup() {
       createCanvas(windowWidth,windowHeight);
     noStroke();
-    one.x = random(-300, -200);
-    one.y = random(0, 500);
-    two.x = random(-300, -200);
-    two.y = random(0, 0);
-    three.x = random(-700, -200);
-    three.y = random(0, 500);
-    four.x = random(-500, -200);
-    four.y = random(0, 0);
+    one.x =  (-600);
+    one.y = (-200);
+    onee.x = (-270);
+    onee.y = (-250);
+    onea.x = (-800);
+    onea.y = (-300);
+    oneb.x = (-1300);
+    oneb.y = (-600);
+    onec.x = (-100);
+    onec.y = (-550);
   }
   
   function draw() {
     
     background(bg);
+
+    image(smoke,smokeX,-00,1550,1250);
     
-   image(interactable, three.x, three.y,);
-   image(interactable2, two.x, two.y);
+    smokeX++;
+    
+    if (smokeX > windowWidth) {
+   smokeX = -1480;
+    }
+
+
+    
+   image(interactable, onee.x, onee.y,);
+   image(interactable2, onea.x, onea.y);
    image(interactable1, one.x, one.y);
-   image(interactable4, four.x, four.y);
+   image(interactable3, oneb.x, oneb.y);
+   image(interactable5, onec.x, onec.y);
+  
 
   
    fill(fillcolor);
     ellipse(one.x, one.y, one.d, one.d);
-    fill(fillcolor);
-    triangle(one.x -100 , one.y -100, one.x , one.y - 10 , one.x, one.y + 10);
-  
-    fill('rgb(213,132,213)');
-    ellipse(two.x, two.y, two.d, two.d);
-  
-    fill( 'orange');
-    ellipse(three.x, three.y, three.d, three.d);
+    
+  fill(fillcolor);
+    ellipse(onee.x, onee.y, onee.d, onee.d);
 
-    fill( 'blue');
-    ellipse(four.x, four.y, four.d, four.d);
+  fill(fillcolor);
+    ellipse(onea.x, onea.y, onea.d, onea.d);
+
+  fill(fillcolor);
+    ellipse(oneb.x, oneb.y, oneb.d, oneb.d);
+
+  fill(fillcolor);
+    ellipse(onec.x, onec.y, onec.d, onec.d);
+
+
+    
+
+    
+
+   
+    if (one.x > width ) {
+      one.x = random(0, 300); 
+      one.y = 0; 
+      one.d = 20;
+     
+    }
+
+    if (onee.x > width ) {
+      onee.x = random(0, 300); 
+      onee.y = 0; 
+      onee.d = 20;
+     
+    }
+
+    if (onea.x > width ) {
+      onea.x = random(0, 300); 
+      onea.y = 0; 
+      onea.d = 20;
+     
+    }
+
+    if (oneb.x > width + 5) {
+      oneb.x = random(0, 300); 
+      oneb.y = 0; 
+      oneb.d = 20;
+     
+    }
+
+
+    if (onec.x > width + 5) {
+      onec.x = random(0, 300); 
+      onec.y = 0; 
+      onec.d = 20;
+     
+    }
+    
+    
+    
+    
+    one.x += 1.5; 
+    one.y += 1; 
+
+    onee.x += 1.5; 
+    onee.y += 1; 
+
+    onea.x += 1.5; 
+    onea.y += 1; 
+
+    oneb.x += 1.5; 
+    oneb.y += 1; 
+
+    onec.x += 1.5; 
+    onec.y += 1; 
+    
     
    
-    if (one.x > width + 100) {
-      one.x = random(0, 500); 
-      one.y = 0; 
-      one.d = 20
-    }
-    
-     if (two.x > width + 100) {
-      two.x = random(0, 500); 
-      two.y = 0; 
-    }
-    
-    
-     if (three.x > width + 100) {
-      three.x = random(0, 500); 
-      three.y = 0; 
-       
-  
-    }
-
-    if (four.x > width + 100) {
-        four.x = random(0, 500); 
-        four.y = 0; 
-         
-    
-      }
-      
-    
-    
-    one.x += 1; 
-    one.y += 1; 
-    
-    two.x += 1; 
-    two.y += 1; 
-    
-    three.x += 1; 
-    three.y += 1; 
-
-    four.x += 1; 
-    four.y += 1; 
     
     
     if (mouseIsPressed) {
-      click();
-     
-      press();
-      
+    
       hit();
 
-      smash();
+      hitt();
+
+      hit1();
+
+      hit2();
+
+      hit3();
+
+    
 
 
     } 
@@ -148,47 +214,60 @@ let one = { //Green Circle
   
   
   
-  function click() {
-    let button = dist(mouseX, mouseY, three.x, three.y);
-    //let button = dist(mouseX, mouseY, two.x, two.y);
-    if (button <= 50) {
-      three.d = 0 
-      interactable.setFrame(0);
-    interactable.play();
-      console.log("click!");
-    }
-}
-
-    function press() {
-        let button = dist(mouseX, mouseY, two.x, two.y);
-        //let button = dist(mouseX, mouseY, two.x, two.y);
-        if (button <= 50) {
-          two.d = 0 
-          interactable2.setFrame(0);
-          interactable2.play();
-          console.log("press!");
-        }
-    }
+  
 
     function hit() {
         let button = dist(mouseX, mouseY, one.x , one.y);
         if (button <= 50) {
            one.d = 0;
-           fillcolor = ('rgb(105,105,105)');
           interactable1.setFrame(0);
           interactable1.play();
           console.log("hit!");
             }
 }
 
-function smash() {
-    let button = dist(mouseX, mouseY, four.x, four.y);
-    if (button <= 50) {
-      four.d = 0 
-      interactable4.setFrame(0);
-      interactable4.play();
-      console.log("smash!");
-    }
+
+function hitt() {
+  let button = dist(mouseX, mouseY, onee.x , onee.y);
+  if (button <= 50) {
+     onee.d = 0;
+    interactable.setFrame(0);
+    interactable.play();
+    console.log("hitt!");
+      }
 }
-    
+
+
+function hit1() {
+  let button = dist(mouseX, mouseY, onea.x , onea.y);
+  if (button <= 50) {
+     onea.d = 0;
+    interactable2.setFrame(0);
+    interactable2.play();
+    console.log("hit1!");
+      }
+}
+
+function hit2() {
+  let button = dist(mouseX, mouseY, oneb.x , oneb.y);
+  if (button <= 50) {
+     oneb.d = 0;
+    interactable3.setFrame(0);
+    interactable3.play();
+    console.log("hit2!");
+      }
+}
+
+function hit3() {
+  let button = dist(mouseX, mouseY, onec.x , onec.y);
+  if (button <= 50) {
+     onec.d = 0;
+    interactable5.setFrame(0);
+    interactable5.play();
+    console.log("hit3!");
+      }
+}
+
+
+
   
