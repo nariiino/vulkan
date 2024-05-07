@@ -31,7 +31,22 @@ let one = { //Green Circle
     y: 0,
     d: 20
   };
+
+  let oned = { //Green Circle
+    x: 100,
+    y: 0,
+    d: 20
+  };
+
+  let onev = { //Green Circle
+    x: 100,
+    y: 0,
+    d: 20
+  };
   
+  
+  var Tx = 510;
+  var Ty = 250;
 
 
   let fillcolor = ('red');
@@ -59,6 +74,8 @@ let smoke2X = -900
     interactable4 = loadImage('r4.gif');
     interactable3 = loadImage('r4.gif');
     interactable5 = loadImage('r4.gif');
+    interactable6 = loadImage('r4.gif');
+    interactable7 = loadImage('r4.gif');
     bg = loadImage('back3.gif')
     smoke2 = loadImage ('smoke.png');
     smoke = loadImage ('smoke.png');
@@ -70,6 +87,9 @@ let smoke2X = -900
     }
     function setup() {
       createCanvas(windowWidth,windowHeight);
+      h1 = createElement('h1', 'TANZ AUF DEM VULKAN');
+      h1.style('color', 'rgb(143,1,1)');
+      h1.mousePressed(redirect);
     noStroke();
     one.x =  (-600);
     one.y = (-200);
@@ -81,11 +101,19 @@ let smoke2X = -900
     oneb.y = (-600);
     onec.x = (-100);
     onec.y = (-550);
+    oned.x = (-340);
+    oned.y = (-555);
+    onev.x = (-340);
+    onev.y = (-455);
   }
   
   function draw() {
     
     background(bg);
+
+    h1.position(Tx,Ty);
+    Tx = Tx + random (-1, 1);
+    Ty = Ty + random (-1, 1);
 
     image(smoke,smokeX,-00,1550,1250);
     
@@ -102,6 +130,8 @@ let smoke2X = -900
    image(interactable1, one.x, one.y);
    image(interactable3, oneb.x, oneb.y);
    image(interactable5, onec.x, onec.y);
+   image(interactable6, oned.x, oned.y);
+   image(interactable7, onev.x, onev.y);
   
 
   
@@ -119,6 +149,13 @@ let smoke2X = -900
 
   fill(fillcolor);
     ellipse(onec.x, onec.y, onec.d, onec.d);
+
+  fill(fillcolor);
+    ellipse(oned.x, oned.y, oned.d, oned.d);
+
+  fill(fillcolor);
+    ellipse(onev.x, onev.y, onev.d, onev.d);
+
 
 
     
@@ -162,13 +199,26 @@ let smoke2X = -900
      
     }
     
-    
-    
-    
-    one.x += 1.5; 
-    one.y += 1; 
+    if (oned.x > width + 5) {
+      oned.x = random(0, 300); 
+      oned.y = 0; 
+      oned.d = 20;
+     
+    }
 
-    onee.x += 1.5; 
+    if (onev.x > width + 5) {
+      onev.x = random(0, 300); 
+      onev.y = 0; 
+      onev.d = 20;
+     
+    }
+    
+    
+    
+    one.x += 3; 
+    one.y += 2; 
+
+    onee.x += 2; 
     onee.y += 1; 
 
     onea.x += 1.5; 
@@ -179,6 +229,12 @@ let smoke2X = -900
 
     onec.x += 1.5; 
     onec.y += 1; 
+    
+    oned.x += 1.5; 
+    oned.y += 1; 
+
+    onev.x += 2; 
+    onev.y += 1; 
     
     
    
@@ -196,6 +252,10 @@ let smoke2X = -900
 
       hit3();
 
+      hit4();
+
+      hit5();
+
     
 
 
@@ -203,6 +263,10 @@ let smoke2X = -900
   
   }
   
+
+  function redirect(){
+    window.location.href = "about.html";
+  }
   
   function mousePressed() {
    
@@ -267,6 +331,28 @@ function hit3() {
     console.log("hit3!");
       }
 }
+
+function hit4() {
+  let button = dist(mouseX, mouseY, oned.x , oned.y);
+  if (button <= 50) {
+     oned.d = 0;
+    interactable6.setFrame(0);
+    interactable6.play();
+    console.log("hit4!");
+      }
+}
+
+function hit5() {
+  let button = dist(mouseX, mouseY, onev.x , onev.y);
+  if (button <= 50) {
+     onev.d = 0;
+    interactable7.setFrame(0);
+    interactable7.play();
+    console.log("hit5!");
+      }
+}
+
+
 
 
 

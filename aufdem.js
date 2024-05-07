@@ -37,7 +37,7 @@ smoke = loadImage ('smoke.png');
 
 
 function draw() {
-  background ('rgb(12,2,19)');
+  background ('rgb(38,24,61)');
   system.addParticle();
   system.run();
     h1.position(Tx,Ty);
@@ -90,7 +90,7 @@ Particle.prototype.display = function() {
   strokeWeight(1);
   fill(-200, this.lifespan);
   //ellipse(this.position.x, this.position.y, 12, 12);
-  text("TANTZ", this.position.x, this.position.y);
+  text("TANZ", this.position.x, this.position.y);
 };
 
 // Is the particle still useful?
