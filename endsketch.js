@@ -76,7 +76,7 @@ let smoke2X = -900
     interactable5 = loadImage('r4.gif');
     interactable6 = loadImage('r4.gif');
     interactable7 = loadImage('r4.gif');
-    bg = loadImage('back3.gif')
+    bg = loadImage('bg2.gif')
     smoke2 = loadImage ('smoke.png');
     smoke = loadImage ('smoke.png');
   }
@@ -115,7 +115,7 @@ let smoke2X = -900
     Tx = Tx + random (-1, 1);
     Ty = Ty + random (-1, 1);
 
-    image(smoke,smokeX,-00,1550,1250);
+    image(smoke,smokeX,-00,1550,950);
     
     smokeX++;
     
@@ -354,6 +354,7 @@ function hit5() {
 
 
 
-
+let mySound = new Audio('audio.mp3')
+mySound.play()
 
   

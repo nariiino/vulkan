@@ -37,7 +37,7 @@ smoke = loadImage ('smoke.png');
 
 
 function draw() {
-  background ('rgb(38,24,61)');
+  background ('rgb(22,6,39)');
   system.addParticle();
   system.run();
     h1.position(Tx,Ty);
